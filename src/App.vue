@@ -3,12 +3,8 @@
     <div class="container">
       <div class="introduce">
         <h1>vue-fluctuation</h1>
-        <p>一个基于vue&vue-digital-transform的数值波动效果组件</p>
-      </div>
-      <div class="">
-        <div>先吃后付</div>
         <div>
-          <a href="https://github.com/Yanggoing">
+          <a href="https://github.com/Yanggoing/vue-fluctuation">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  width="126" height="20">
               <linearGradient id="s" x2="0" y2="100%">
@@ -38,23 +34,27 @@
             </svg>
           </a>
         </div>
+        <p>一个基于vue&vue-digital-transform的数值波动效果组件</p>
       </div>
+      <p>
+        二次封装了vue-digital-transform这个组件，增加了数值变动时的增减动画效果，在一些需要实时监测数据波动并展示的场景下可以使用，组件还有一些不完美的地方需要改进，支持的话，帮我点个Star吧！
+      </p>
+      <h2>体验Demo</h2>
       <div class="demo-box">
         <span class="type-box">基本数值样式</span>
         <span class="random-btn" @click="randomClick">摇摇乐</span>
         <label>
-          <span>更改单位</span>
           <input type="text"
-                 placeholder="你想要的单位"
+                 placeholder="这里修改单位"
                  v-model.trim.lazy="ordUnit"
           >
         </label>
         <fluctuation :value="testValue"
                      :seperator="false"
                      :unit="ordUnit"
+                     :interval="500"
         ></fluctuation>
       </div>
-
       <div class="demo-box">
         <span class="type-box">千分位符样式</span>
         <span class="random-btn" @click="randomSepClick">摇摇乐</span>
@@ -64,7 +64,6 @@
           :unit="moneyUnit"
         ></fluctuation>
       </div>
-
     </div>
   </div>
 </template>
@@ -79,7 +78,7 @@ export default {
   },
   data() {
     return {
-      testValue: 0,
+      testValue: 666666,
       testMoney: 10000000,
       ordUnit: '',
       moneyUnit: '元',
@@ -111,7 +110,9 @@ export default {
   .container
     width 800px
     margin auto
-    text-align center
+
+    .introduce
+      text-align center
 
     .demo-box
       display flex
@@ -122,7 +123,25 @@ export default {
       border-radius: 4px
 
       label
-        margin-right 10px
+        display flex
+        align-items center
+        width 100px
+        height 30px
+        padding-left 10px
+        padding-right 5px
+        border-radius 15px
+        margin-right 20px
+        background-color: #eee;
+
+        span
+          margin-right 10px
+
+        input
+          width 100px
+          height 16px
+          background none
+          outline none
+          border none
 
       .type-box
         width 100px

@@ -1,7 +1,19 @@
 {
   "name": "vue-fluctuation",
   "version": "0.1.0",
-  "private": true,
+  "description": "a simple vue-component for the fluctuation of data",
+  "license": "ISC",
+  "author": "yanggoing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yanggoing/vue-fluctuation"
+  },
+  "private": false,
+  "keywords": [
+    "vue",
+    "digital",
+    "fluctuation"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
