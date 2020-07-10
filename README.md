@@ -1,8 +1,8 @@
 # vue-fluctuation
-
+一个基于vue&vue-digital-transform的数值波动效果组件
 ## Project setup
 ```
-npm install
+npm install vue-fluctuation
 ```
 
 ### Compiles and hot-reloads for development
