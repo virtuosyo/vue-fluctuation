@@ -1,0 +1,16 @@
+{
+  "id": "1931775",
+  "name": "vue-digital-fluctation",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2902171",
+      "name": "数据",
+      "font_class": "shuju",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}
