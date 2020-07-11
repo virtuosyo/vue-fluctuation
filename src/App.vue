@@ -49,20 +49,32 @@
                  v-model.trim.lazy="ordUnit"
           >
         </label>
-        <fluctuation :value="testValue"
-                     :seperator="false"
-                     :unit="ordUnit"
-                     :interval="500"
-        ></fluctuation>
+        <div class="show-box">
+          <fluctuation :value="testValue"
+                       :seperator="false"
+                       :unit="ordUnit"
+                       :interval="500"
+          >
+            <template>
+              <i class="iconfont icon-data"></i>
+            </template>
+          </fluctuation>
+        </div>
       </div>
       <div class="demo-box">
         <span class="type-box">千分位符样式</span>
         <span class="random-btn" @click="randomSepClick">摇摇乐</span>
-        <fluctuation
-          :value="testMoney"
-          seperator
-          :unit="moneyUnit"
-        ></fluctuation>
+        <div class="show-box">
+          <fluctuation
+            :value="testMoney"
+            seperator
+            :unit="moneyUnit"
+          >
+            <template>
+              <i class="iconfont icon-data"></i>
+            </template>
+          </fluctuation>
+        </div>
       </div>
     </div>
   </div>
@@ -121,6 +133,15 @@ export default {
       padding: 20px
       box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.12)
       border-radius: 4px
+
+      .show-box
+        display flex
+        align-items center
+        width max-content
+        height 32px
+        padding-right 20px
+        border-radius 8px
+        background #F8F8F8FF
 
       label
         display flex

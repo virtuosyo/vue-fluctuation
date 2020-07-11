@@ -1,15 +1,17 @@
 <!--suppress PointlessBooleanExpressionJS -->
 <template>
   <div class="fluctuating-container">
+    <slot></slot>
     <div class="data-container">
-      <i class="iconfont icon-data"></i>
-      <digital-transform :value="value" :useGrouping="seperator"
-                         :interval="interval"></digital-transform>
-      <span>{{unit}}</span>
+      <digital-transform :value="value"
+                         :useGrouping="seperator"
+                         :interval="interval"
+      ></digital-transform>
+      <span class="unit-box">{{unit}}</span>
+      <transition name="lotus">
+        <p class="fluctuating-animate" v-show="isShow">{{changeValue}}</p>
+      </transition>
     </div>
-    <transition name="lotus">
-      <p class="fluctuating-animate" v-show="isShow">{{changeValue}}</p>
-    </transition>
   </div>
 </template>
 
@@ -71,8 +73,10 @@ export default {
     isPlus(testVal, isSep) {
       // 判断是否为带有千分位符选项
       if (isSep) {
-        const changeStr = testVal.toString().replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
-        const result = changeStr.split('').join('');
+        const changeStr = testVal.toString()
+          .replace(/^-?\d+/g, (m) => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
+        const result = changeStr.split('')
+          .join('');
         const first = changeStr.split('')[0];
         if (first.match(/^[0-9]$/)) {
           return `+${result}`;
@@ -104,40 +108,36 @@ export default {
     transition all 1s
 
   .fluctuating-container
-    position relative
     display flex
     align-items center
-    width max-content
-    height 32px
-    border-radius 8px
-    background #F8F8F8FF
 
-    .fluctuating-animate
-      position absolute
-      left 36%
-      top -32px
-      text-align center
-      font-family 'Arial-BoldItalicMT', 'Arial Bold Italic', 'Arial'
-      font-weight 700
-      font-style italic
-      font-size 18px
-      color limegreen
+    i
+      margin-left 8px
+      margin-right 18px
+      font-size 22px
+      color #6A83DAFF
 
     .data-container
+      position relative
+      display flex
       font-size 16px
       font-family SFProRounded-Bold, SFProRounded
       font-weight bold
       color rgba(0, 0, 0, 0.85)
       line-height 19px
 
-      i
-        margin-left 8px
-        margin-right 18px
-        font-size 22px
-        color #6A83DAFF
-
-      span
+      .unit-box
         margin-left 6px
-        margin-right 34px
         line-height 19px
+
+      .fluctuating-animate
+        position absolute
+        justify-content space-around
+        top -36px
+        text-align center
+        font-family 'Arial-BoldItalicMT', 'Arial Bold Italic', 'Arial'
+        font-weight 700
+        font-style italic
+        font-size 18px
+        color limegreen
 </style>

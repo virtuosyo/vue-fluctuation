@@ -8,11 +8,15 @@ npm install vue-fluctuation
 ## Quick Start
 ```html
 <template>
-  <fluctuation :value="value" 
-               :seperator="isSep"
-               :unit="unit"                                       
-               :interval="interval"
- ></fluctuation>
+<fluctuation :value="value" 
+             :seperator="isSep"
+             :unit="unit"                       
+             :interval="interval"
+>
+    <template>
+        <i>可以选择插入以i标签包裹的icon</i>
+    </template>
+</fluctuation>
 </template>
 ```
 ```js
@@ -32,6 +36,16 @@ export default {
   }
 };
 ```
+## Slot
+可以选择插入一个icon，以i标签包裹，自带默认样式
+```vue
+<fluctuation :value="value">
+    <template>
+        <i>可以选择插入以i标签包裹的icon</i>
+    </template>
+</fluctuation>
+```
+
 ## Props
 
 | prop                  | type          | description                                   | default   |

@@ -2,9 +2,9 @@
   "name": "vue-fluctuation",
   "version": "0.1.1",
   "description": "a simple vue-component for the fluctuation of data",
-  "license": "ISC",
+  "license": "MIT",
   "author": "yanggoing",
-  "main": "dist/js/app.js",
+  "main": "dist/fluctuation.umd.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Yanggoing/vue-fluctuation"
@@ -17,7 +17,9 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run build:component && npm run build:docsDemo",
+    "build:component": "vue-cli-service build --target lib --name fluctuation ./src/components/Fluctuation.vue",
+    "build:docsDemo": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
