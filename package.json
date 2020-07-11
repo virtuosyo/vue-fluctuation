@@ -4,6 +4,7 @@
   "description": "a simple vue-component for the fluctuation of data",
   "license": "ISC",
   "author": "yanggoing",
+  "main": "dist/js/app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Yanggoing/vue-fluctuation"
