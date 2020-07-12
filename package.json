@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://github.com/Yanggoing/vue-fluctuation"
   },
+  "homepage": "https://yanggoing.github.io/#/vue-fluctuation",
   "private": false,
   "keywords": [
     "vue",
