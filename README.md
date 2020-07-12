@@ -1,5 +1,8 @@
 # vue-fluctuation
 一个基于vue&vue-digital-transform的数值波动效果组件
+## Demo
+[vue-fluctuation]("https://yanggoing.github.io/#/vue-fluctuation")
+
 ## Install
 ```
 npm install vue-fluctuation
