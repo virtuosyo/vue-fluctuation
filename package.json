@@ -20,7 +20,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm run build:component && npm run build:docsDemo",
     "build:component": "vue-cli-service build --target lib --name fluctuation ./src/components/Fluctuation.vue",
-    "build:docsDemo": "vue-cli-service build --dest docs",
+    "build:docs": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
